@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservation{% endblock %}
+
+{% block body %}
+    <h1>Reservation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Expéditeur</th>
+                <td>{{ reservation.expediteur }}</td>
+            </tr>
+            <tr>
+
+            <tr>
+                <th>Destinataire</th>
+                <td>{{ reservation.receveur }}</td>
+            </tr>
+
+
+            <tr>
+
+            
+                <th>Date d'envoi du colis</th>
+                <td>{{ reservation.startedDate ? reservation.startedDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Ville de départ </th>
+                <td>{{ reservation.villeDepart }}</td>
+            </tr>
+            <tr>
+                <th>Ville d'Arrivée</th>
+                <td>{{ reservation.villeArrivee }}</td>
+            </tr>
+
+            
+            <tr>
+                <th>Colis</th>
+                <td>{{ reservation.colis }} {{ reservation.colis.prix }}€</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('admin_reservation_index') }}">Retour à la liste</a>
+
+    <a class="btn btn-warning" href="{{ path('admin_reservation_edit', {'id': reservation.id}) }}">Modifier la réservation</a>
+
+    {{ include('admin/reservation/_delete_form.html.twig') }}
+
+
+{% endblock %}

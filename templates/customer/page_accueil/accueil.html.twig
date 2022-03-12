@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+		<div class="bs-docs-header" id="content" tabindex="-1">
+			<div class="container">
+				<h1>Bienvenue chez FLYDE</h1>
+				<p>Nous nous assurons d'expédier vos colis sur l'axe Paris-Dakar </p>
+			</div>
+		</div>
+
+		<div class="container bs-docs-container">
+			<div class="row">
+				<div class="col-md-9" role="main">
+					<div class="bs-docs-section">
+						<h1 id="download" class="page-header">
+							<a class="anchorjs-link " href="#download" aria-label="Anchor link for: download" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Nos services
+						</h1>
+						<p class="lead">Vous pouvez réserver vos colis, en tout simplicité et ainsi choisir la date à laquelle il sera expédier. La liste des produits que nous transportons est aussi consultable et pour toutes autres questions aussi un formulaire de contact est à disposition des utilisateurs, FLYDE répondra dans les plus bref délai</p>
+						<div class="row bs-downloads">
+							<div class="col-sm-4">
+								<h3 id="download-bootstrap">Réservation</h3>
+								<p>Réserver votre colis en quelques clics en renseignant quelques informations</p>
+								<p>
+									<a href="{{ path('customer_reservation') }}" class="btn btn-lg btn-outline" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download compiled');">
+										                                    Réservation</a>
+								</p>
+							</div>
+							<div class="col-sm-4">
+								<h3 id="download-source">Produits</h3>
+								<p>Visionnez nos produits transportables et ceux dont on accepte pas le transport
+									<strong>On vous dit tout	                                    
+									</strong>
+								</p>
+								<p>
+									<a href="{{ path('produits_les_plus_transportes') }}" class="btn btn-lg btn-outline" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Produits
+										                                    </a>
+								</p>
+							</div>
+							<div class="col-sm-4">
+								<h3 id="download-sass">Contact</h3>
+								<p>
+									FLYDE est proche de vous et répond aux problèmes que vous pouvez rencontrer.</p>
+								<p>
+									<a href="{{ path('customer_contact') }}" class="btn btn-lg btn-outline" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download Sass');">
+										                                    Contact</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+{% endblock %}

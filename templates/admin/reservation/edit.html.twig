@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier la réservation{% endblock %}
+
+{% block body %}
+    <h1>Modifier la réservation</h1>
+
+    {{ include('admin/reservation/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+
+    <a class="btn btn-primary mt-3" href="{{ path('admin_reservation_index') }}">Retour à la liste</a>
+
+    {{ include('admin/reservation/_delete_form.html.twig') }}
+
+
+{% endblock %}

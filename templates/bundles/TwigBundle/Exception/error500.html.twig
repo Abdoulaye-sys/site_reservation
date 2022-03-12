@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Erreur 500{% endblock %}
+
+{% block body %}
+<div id="error1">
+<div class="bg-warning d-flex flex-column justify-content-center">
+<div class="d-flex justify-content-center d-flex flex-column">
+<div class="d-flex flex-column justify-content-center">
+</div>
+    <h1>Erreur interne du serveur</h1>
+    <p>’une erreur s’est produite pendant la connexion au serveur et, par conséquent, la page demandée ne peut pas être chargée</p>
+    <p>Code de l'erreur: {{ status_code }}</p>
+    <p>Message de l'erreur: {{ status_text }}</p>
+    <p>Message personnalisé: {{ exception.message}}</p>
+</div>
+</div>
+</div>
+{% endblock %}

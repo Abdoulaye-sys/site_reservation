@@ -1,0 +1,59 @@
+{% extends 'admin/base_admin.html.twig' %}
+
+{% block title %}Gérer les Réservations{% endblock %}
+
+{% block body %}
+
+    <h1>Réservations</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Expéditeur</th>
+                <th>Destinataire</th>
+                <th>Date d'envoi du colis</th>
+                <th>Ville de départ</th>
+                <th>Ville d'Arrivée</th>
+                <th>Colis</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+            <tr>
+                <td>{{ reservation.expediteur }}</td>
+                <td>{{ reservation.receveur }}</td>
+                <td>{{ reservation.startedDate ? reservation.startedDate|date('Y-m-d ') }}</td>
+                <td>{{ reservation.villeDepart }}</td>
+                <td>{{ reservation.villeArrivee }}</td>
+                <td>{{ reservation.colis }} {{ reservation.colis.prix}}€</td>
+
+                <td>
+                    <a class ="btn btn-primary" href="{{ path('admin_reservation_show', {'id': reservation.id}) }}">Afficher</a>
+                    <a class ="btn btn-danger" href="{{ path('admin_reservation_edit', {'id': reservation.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Pas de réservation enregistrée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-success" href="{{ path('admin_reservation_new') }}">Ajouter une nouvelle réservation</a>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

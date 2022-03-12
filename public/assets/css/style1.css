@@ -1,0 +1,35 @@
+header {
+  background-color: #1da0bd !important;
+  color: white !important;
+  
+}
+
+.nav-color-white {
+  color: white !important;
+
+}
+
+.nav-color-white:hover {
+  color: rgb(37, 34, 34) !important;
+  
+}
+
+
+#error1 {
+  background-image: url("https://media.istockphoto.com/photos/concept-of-error-in-program-code-picture-id1308685498?b=1&k=20&m=1308685498&s=170667a&w=0&h=A4y81zJoYVHkIS9i9sC5njXDKJ5MNvRG3jfMzsEq5EI=");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+#recap {
+
+  background-image: url("https://media.istockphoto.com/photos/the-word-recap-is-written-in-a-notebook-with-a-marker-calculator-and-picture-id1277590144?b=1&k=20&m=1277590144&s=170667a&w=0&h=PW7TrQ4rZQq0uXhnptGXQi1shOT9Jyj1SGFrIEVEDP4=");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+

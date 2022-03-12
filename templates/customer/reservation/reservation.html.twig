@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="d-flex justify-content-center ">
+    <div class=" container py-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Reservation</h3>
+                        <div class="card-body">
+
+                            <div class="col-auto ">
+                                {{ form_start(form) }}
+                                {{ form_row(form.date)}}
+                                {{ form_row(form.type_colis)}}
+                                {{ form_row(form.poids_colis)}}
+                                {{ form_row(form.ville_depart)}}
+                                {{ form_row(form.ville_arrivee)}}
+                                {{ form_row(form.nom_receveur)}}
+                                {{ form_row(form.prenom_receveur)}}
+                                {{ form_row(form.telephone_receveur)}}
+                                {{ form_row(form.code_receveur)}}
+                                    <button class="btn btn-primary mt-2" type="submit">Validez ma réservation</button>
+                                {{ form_end(form)}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                                {{ encore_entry_link_tags('datepicker') }}
+                                {{ encore_entry_script_tags('datepicker') }}
+
+{% endblock %}

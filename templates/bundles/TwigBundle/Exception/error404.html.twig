@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Page non trouvée
+{% endblock %}
+
+{% block body %}
+
+<div id="error">
+<div class="d-flex justify-content-center">
+<div class="d-flex flex-column">
+	<h1>Page non trouvée</h1>
+	<p>Vous avez trop fly 😅</p>
+	<p>Code de l'erreur:
+		{{ status_code }}</p>
+	<p>Message de l'erreur:
+		{{ status_text }}</p>
+	<p>Message personnalisé:
+		{{ exception.message}}</p>
+</div>
+</div>        
+</div>
+{% endblock %}

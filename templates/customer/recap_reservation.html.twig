@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+		<div class="container py-5">
+
+			<div class="row">
+
+				<div class="col-sm-12 col-md-12 col-lg-6 mt-3">
+					<div class="card">
+						<div class="card-header">
+							<h3 class="text-center">Récapitulatif</h3>
+						</div>
+
+						<div class="card-body">
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">Identifiant du client</th>
+										<th scope="col">Date de reservation</th>
+										<th scope="col">Destinataire</th>
+										<th scope="col">Ville de Depart</th>
+										<th scope="col">Ville Arrivée</th>
+										<th scope="col">Colis</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<th scope="row">{{ user.firstName }} {{ user.lastName }}</th>
+										<th scope="row">{{ reservation.startedDate ? reservation.startedDate|date("d-m-Y")}}</th>
+										<th scope="row">{{ destinataire.nom }} {{ destinataire.prenom }}</th>
+										<th scope="row">{{ villeDepart }}</th>
+										<th scope="row">{{ villeArrive }}</th>
+										<th scope="row">{{ colis.type }} {{ colis.poids }}kilos {{colis.prix }}€</th>
+									</tr>
+								</tbody>
+
+							</table>
+							<form action="{{ path('create_checkout_session',{'id':reservation.id})}}">
+								<button type="submit" id="checkout-button" class="btn btn-success w-100">Paiement sur stripe</button>
+							</form>
+
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+
+
+</div>{% endblock %}
